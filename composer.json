@@ -1,0 +1,23 @@
+{
+  "name": "codeis/sql-to-querybuilder",
+  "description": "SQL to query builder",
+  "type": "library",
+  "license": "MIT",
+    "homepage": "https://github.com/Code-Is/sql-to-querybuilder",
+  "authors": [
+    {
+      "name": "Gabriel",
+      "email": "gabrielcruzsi.mail@gmail.com.br"
+    },
+    {
+      "name": "Jerfeson Guerreiro",
+      "email": "jerfeson_guerreiro@hotmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "greenlion/php-sql-parser": "^4.3.0"
+  },
+  "require-dev": {
+  }
+}
