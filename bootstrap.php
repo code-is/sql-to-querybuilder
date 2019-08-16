@@ -12,3 +12,6 @@ define('LIB_PATH', realpath(__DIR__.'/lib/').DS);
 require ROOT_PATH.'vendor'.DS.'autoload.php';
 
 $appName = php_sapi_name() == 'cli' ? 'console' : 'http';
+
+//APP Configuration
+$settings = require CONFIG_PATH.'app.php';
