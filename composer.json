@@ -19,5 +19,12 @@
     "greenlion/php-sql-parser": "^4.3.0"
   },
   "require-dev": {
+  },
+
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Lib\\": "lib/"
+    },
   }
 }
