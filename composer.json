@@ -16,7 +16,10 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "greenlion/php-sql-parser": "^4.3.0"
+    "greenlion/php-sql-parser": "4.3.*",
+    "slim/slim": "4.5.*",
+    "slim/psr7": "1.0.*",
+    "php-di/php-di": "6.1.*"
   },
   "require-dev": {
   },
@@ -26,5 +29,6 @@
       "App\\": "app/",
       "Lib\\": "lib/"
     },
+    "files": ["lib/helpers.php"]
   }
 }

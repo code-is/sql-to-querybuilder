@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT_PATH', realpath(__DIR__.'/').DS);
 define('APP_PATH', realpath(__DIR__.'/app/').DS);
@@ -11,7 +14,16 @@ define('LIB_PATH', realpath(__DIR__.'/lib/').DS);
 
 require ROOT_PATH.'vendor'.DS.'autoload.php';
 
-$appName = php_sapi_name() == 'cli' ? 'console' : 'http';
-
-//APP Configuration
+$appType = php_sapi_name() == 'cli' ? 'console' : 'http';
 $settings = require CONFIG_PATH.'app.php';
+$settingsEnv = require CONFIG_PATH.($settings['settings']['env']).'.php';
+$settings = array_merge_recursive($settings, $settingsEnv);
+
+// instance app
+$app = app($appType, $settings);
+// Set up dependencies
+$app->registerProviders();
+// Register middleware
+$app->registerMiddleware();
+
+
